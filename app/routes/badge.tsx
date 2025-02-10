@@ -1,6 +1,6 @@
-import { Badge } from "./Badge.tsx";
+import { Badge } from "../components/Badge";
 
-export const BadgesShowcase = () => {
+export default function BadgesShowcase() {
     return <div className="w-60 flex flex-wrap items-center gap-6">
         <Badge intent={'neutral'} size={'sm'}>Label</Badge>
         <Badge intent={'neutral'} size={'md'}>Label</Badge>
