@@ -3,7 +3,7 @@ import type { FC, MouseEventHandler, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export const buttonVariants = cva(
-    'flex justify-center items-center rounded font-medium [&>svg]:size-5',
+    'flex justify-center items-center rounded font-medium',
     {
         variants: {
             intent: {
@@ -82,6 +82,10 @@ export const buttonVariants = cva(
             {
                 intent: ['linkGray', 'linkColor'],
                 class: 'p-0',
+            },
+            {
+                size: ['md', 'lg', 'xl'],
+                class: '[&>svg]:size-5',
             },
         ],
         defaultVariants: {

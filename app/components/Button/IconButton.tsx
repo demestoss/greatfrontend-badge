@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { type ButtonProps, buttonVariants } from './Button.tsx';
 
-const iconButtonVariants = cva('[&>svg]:size-5', {
+const iconButtonVariants = cva('', {
     variants: {
         size: {
             md: 'p-2.5',
@@ -12,6 +12,12 @@ const iconButtonVariants = cva('[&>svg]:size-5', {
             xxl: 'p-4 [&>svg]:size-6',
         },
     },
+    compoundVariants: [
+        {
+            size: ['md', 'lg', 'xl'],
+            class: '[&>svg]:size-5',
+        },
+    ],
     defaultVariants: {
         size: 'md',
     },
