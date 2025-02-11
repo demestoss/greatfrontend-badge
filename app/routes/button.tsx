@@ -1,6 +1,6 @@
 import { RiStarLine } from '@remixicon/react';
 import type { FC } from 'react';
-import { Button, type ButtonProps } from '../components/Button.tsx';
+import { Button, type ButtonProps, IconButton } from '../components/Button';
 
 export default function ButtonsShowcase() {
     return (
@@ -31,8 +31,8 @@ const ButtonsRow: FC<{ intent: ButtonProps['intent'] }> = ({ intent }) => (
         <Button size={'xxl'} intent={intent}>
             Button CTA
         </Button>
-        <Button size={'xxl'} intent={intent} aria-label="Star">
+        <IconButton size={'xxl'} intent={intent} aria-label="Star CTA">
             <RiStarLine />
-        </Button>
+        </IconButton>
     </div>
 );
