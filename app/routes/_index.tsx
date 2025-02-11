@@ -10,6 +10,10 @@ export default function Home() {
             <Link to="/button">
                 <Button intent={'linkColor'}>Button</Button>
             </Link>
+
+            <a href="/storybook">
+                <Button intent={'linkColor'}>Storybook</Button>
+            </a>
         </div>
     );
 }

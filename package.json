@@ -10,7 +10,7 @@
     "lint:check": "biome check",
     "lint": "biome check --write",
     "sb": "storybook dev -p 6006",
-    "sb:build": "storybook build"
+    "sb:build": "storybook build -o build/client/storybook"
   },
   "dependencies": {
     "@remix-run/node": "^2.15.3",
