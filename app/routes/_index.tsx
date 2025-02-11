@@ -11,7 +11,7 @@ export default function Home() {
                 <Button intent={'linkColor'}>Button</Button>
             </Link>
 
-            <a href="/storybook">
+            <a href="/greatfrontend-design-system/storybook">
                 <Button intent={'linkColor'}>Storybook</Button>
             </a>
         </div>
