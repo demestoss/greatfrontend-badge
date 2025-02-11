@@ -1,6 +1,7 @@
 import { type VariantProps, cva, cx } from 'class-variance-authority';
-import type { FC, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { Slot } from '../Slot';
 import { type ButtonProps, buttonVariants } from './Button.tsx';
 
 const iconButtonVariants = cva('', {
@@ -28,15 +29,17 @@ export type IconButtonProps = VariantProps<typeof iconButtonVariants> &
         'aria-label': string;
     };
 
-export const IconButton: FC<PropsWithChildren<IconButtonProps>> = ({
+export function IconButton({
     children,
     type = 'button',
-    intent,
-    size,
+    intent = 'primary',
+    size = 'md',
+    asChild,
     ...restProps
-}) => {
+}: PropsWithChildren<IconButtonProps>) {
+    const Element = asChild ? Slot : 'button';
     return (
-        <button
+        <Element
             className={twMerge(
                 cx(
                     iconButtonVariants({ size }),
@@ -50,6 +53,6 @@ export const IconButton: FC<PropsWithChildren<IconButtonProps>> = ({
             {...restProps}
         >
             {children}
-        </button>
+        </Element>
     );
-};
+}

@@ -1,6 +1,7 @@
 import { type VariantProps, cva } from 'class-variance-authority';
-import type { FC, MouseEventHandler, PropsWithChildren } from 'react';
+import type { MouseEventHandler, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { Slot } from '../Slot';
 
 export const buttonVariants = cva(
     'flex justify-center items-center rounded font-medium',
@@ -99,19 +100,22 @@ export type ButtonBaseProps = {
     onClick?: MouseEventHandler;
     type?: 'button' | 'submit' | 'reset';
     disabled?: boolean;
+    asChild?: boolean;
 };
 
 export type ButtonProps = VariantProps<typeof buttonVariants> & ButtonBaseProps;
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+export function Button({
     children,
     type = 'button',
-    intent,
+    intent = 'primary',
     size = 'md',
+    asChild,
     ...restProps
-}) => {
+}: PropsWithChildren<ButtonProps>) {
+    const Element = asChild ? Slot : 'button';
     return (
-        <button
+        <Element
             className={twMerge(
                 buttonVariants({
                     intent,
@@ -123,6 +127,6 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
             {...restProps}
         >
             {children}
-        </button>
+        </Element>
     );
-};
+}

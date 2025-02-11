@@ -1,5 +1,6 @@
 import { RiStarLine } from '@remixicon/react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { Button } from './Button';
 import { IconButton } from './IconButton';
 
@@ -10,6 +11,9 @@ const meta = {
         layout: 'centered',
     },
     tags: ['autodocs'],
+    argTypes: {
+        onClick: fn(),
+    },
 } satisfies Meta<typeof Button>;
 
 export default meta;

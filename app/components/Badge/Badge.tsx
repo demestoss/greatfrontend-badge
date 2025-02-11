@@ -1,5 +1,5 @@
 import { type VariantProps, cva } from 'class-variance-authority';
-import type { FC, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 const badgeVariants = cva(
     'inline-flex items-center rounded-full border border-solid border-neutral-200 font-normal text-center',
@@ -27,9 +27,9 @@ const badgeVariants = cva(
 
 export type BadgeProps = VariantProps<typeof badgeVariants>;
 
-export const Badge: FC<PropsWithChildren<BadgeProps>> = ({
+export function Badge({
     children,
     ...restProps
-}) => {
+}: PropsWithChildren<BadgeProps>) {
     return <div className={badgeVariants(restProps)}>{children}</div>;
-};
+}
