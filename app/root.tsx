@@ -8,7 +8,7 @@ export default function Root() {
                 <Meta />
                 <Links />
             </head>
-            <body className="flex flex-col items-center h-screen">
+            <body className="flex flex-col items-center h-screen bg-white">
                 <Outlet />
 
                 <Scripts />

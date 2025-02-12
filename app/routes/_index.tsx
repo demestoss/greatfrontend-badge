@@ -1,20 +1,29 @@
-import { Link } from '@remix-run/react';
-import { Button } from '../components/Button';
+import {
+    Navbar,
+    NavbarItem,
+    NavbarLinkItem,
+    NavbarSection,
+    NavbarSpacer,
+} from '../components/Navbar';
 
 export default function Home() {
     return (
-        <div className="w-60 flex flex-wrap items-center gap-6 py-[200px]">
-            <Button intent={'linkColor'} asChild>
-                <Link to="/badge">Badge</Link>
-            </Button>
+        <div className="container flex flex-wrap items-center gap-6 py-[200px]">
+            <Navbar>
+                <NavbarSection>
+                    <NavbarLinkItem to="/badge">Badge</NavbarLinkItem>
+                    <NavbarLinkItem to="/button">Button</NavbarLinkItem>
+                    <NavbarLinkItem to="/navbar">Navbar Header</NavbarLinkItem>
+                </NavbarSection>
 
-            <Button intent={'linkColor'} asChild>
-                <Link to="/button">Button</Link>
-            </Button>
+                <NavbarSpacer />
 
-            <Button intent={'linkColor'} asChild>
-                <a href="/greatfrontend-design-system/storybook">Storybook</a>
-            </Button>
+                <NavbarItem active asChild>
+                    <a href="/greatfrontend-design-system/storybook">
+                        Storybook
+                    </a>
+                </NavbarItem>
+            </Navbar>
         </div>
     );
 }
