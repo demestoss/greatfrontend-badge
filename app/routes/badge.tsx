@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Badge, type BadgeProps } from '../components/Badge';
+import { Badge, type BadgeProps } from '../components/ui/Badge';
 
 export default function BadgesShowcase() {
     return (

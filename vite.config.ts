@@ -11,7 +11,7 @@ export default defineConfig(({ isPreview }) => {
     return {
         plugins: [
             remix({
-                basename: basePath,
+                basename: `${basePath}/`,
                 ssr: false,
                 buildEnd(args) {
                     if (!args.viteConfig.isProduction) return;

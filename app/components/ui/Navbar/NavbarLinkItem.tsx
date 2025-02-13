@@ -1,6 +1,6 @@
 import { Link, useMatch } from '@remix-run/react';
 import type { PropsWithChildren } from 'react';
-import { NavbarItem } from './Navbar';
+import { NavbarItem } from './Navbar.tsx';
 
 type NavbarLinkItemProps = {
     to: string;

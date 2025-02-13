@@ -100,6 +100,7 @@ export type ButtonBaseProps = {
     onClick?: MouseEventHandler;
     type?: 'button' | 'submit' | 'reset';
     disabled?: boolean;
+    className?: string;
     asChild?: boolean;
 };
 
@@ -111,20 +112,22 @@ export function Button({
     intent = 'primary',
     size = 'md',
     asChild,
+    className,
     ...restProps
 }: PropsWithChildren<ButtonProps>) {
     const Element = asChild ? Slot : 'button';
     return (
         <Element
+            {...restProps}
             className={twMerge(
                 buttonVariants({
                     intent,
                     size,
+                    className,
                     ...restProps,
                 }),
             )}
             type={type}
-            {...restProps}
         >
             {children}
         </Element>

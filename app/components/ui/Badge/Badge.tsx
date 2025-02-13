@@ -25,11 +25,18 @@ const badgeVariants = cva(
     },
 );
 
-export type BadgeProps = VariantProps<typeof badgeVariants>;
+export type BadgeProps = VariantProps<typeof badgeVariants> & {
+    className?: string;
+};
 
 export function Badge({
     children,
+    className,
     ...restProps
 }: PropsWithChildren<BadgeProps>) {
-    return <div className={badgeVariants(restProps)}>{children}</div>;
+    return (
+        <div className={badgeVariants({ className, ...restProps })}>
+            {children}
+        </div>
+    );
 }

@@ -1,6 +1,6 @@
 import { RiStarLine } from '@remixicon/react';
 import type { FC } from 'react';
-import { Button, type ButtonProps, IconButton } from '../components/Button';
+import { Button, type ButtonProps, IconButton } from '../components/ui/Button';
 
 export default function ButtonsShowcase() {
     return (

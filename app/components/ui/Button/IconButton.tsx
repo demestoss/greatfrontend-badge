@@ -35,6 +35,7 @@ export function IconButton({
     intent = 'primary',
     size = 'md',
     asChild,
+    className,
     ...restProps
 }: PropsWithChildren<IconButtonProps>) {
     const Element = asChild ? Slot : 'button';
@@ -45,6 +46,7 @@ export function IconButton({
                     iconButtonVariants({ size }),
                     buttonVariants({
                         intent,
+                        className,
                         ...restProps,
                     }),
                 ),

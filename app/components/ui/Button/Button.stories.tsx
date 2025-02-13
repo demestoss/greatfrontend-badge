@@ -1,8 +1,8 @@
 import { RiStarLine } from '@remixicon/react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button } from './Button';
-import { IconButton } from './IconButton';
+import { Button } from './Button.tsx';
+import { IconButton } from './IconButton.tsx';
 
 const meta = {
     title: 'Components/Button',
